@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #F5F5DC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .calculator {
+            background-color: #D2B48C;
+            padding: 25px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            border: 2px solid #8B4513;
+        }
+        
+        .inputs {
+            margin-bottom: 15px;
+        }
+        
+        input[type="text"] {
+            background-color: #FAEBD7; 
+            border: 1px solid #8B4513; 
+            border-radius: 4px;
+            padding: 8px;
+            margin: 5px 0;
+            width: 80%;
+            text-align: center;
+        }
+        
+        .button-group {
+            margin: 15px 0;
+        }
+        
+        input[type="button"] {
+            background-color: #A0522D;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        
+        .result {
+            margin-top: 15px;
+        }
+
+        h1{
+            text-align: center;
+            text-size-adjust: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1" class="calculator">
+        <h1>Calculator App</h1>
+        <div class="inputs">
+            <input type="text" name="txtNum1" placeholder="Operand 1"><br>
+            <input type="text" name="txtNum2" placeholder="Operand 2">
+        </div>
+        
+        <div class="button-group">
+            <input type="button" value="+" onclick="add()"> 
+            <input type="button" value="-" onclick="subtract()">
+            <input type="button" value="*" onclick="multiply()">
+            <input type="button" value="÷" onclick="divide()">
+        </div>
+        
+        <div class="result">
+            <input type="text" name="txtSum" placeholder="Result">
+        </div>
+    </form>
+
+    <script>
+        function add(){
+            var num1, num2;
+            num1 = Number(document.form1.txtNum1.value);
+            num2 = Number(document.form1.txtNum2.value);
+            document.form1.txtSum.value = num1+num2;
+        }
+        function subtract(){
+            var num1, num2;
+            num1 = Number(document.form1.txtNum1.value);
+            num2 = Number(document.form1.txtNum2.value);
+            document.form1.txtSum.value = num1-num2;
+        }
+        function multiply(){
+            var num1, num2;
+            num1 = Number(document.form1.txtNum1.value);
+            num2 = Number(document.form1.txtNum2.value);
+            document.form1.txtSum.value = num1*num2;
+        }
+        function divide(){
+            var num1, num2;
+            num1 = Number(document.form1.txtNum1.value);
+            num2 = Number(document.form1.txtNum2.value);
+            document.form1.txtSum.value = num1/num2;
+        }
+    </script>
+</body>
+</html>
