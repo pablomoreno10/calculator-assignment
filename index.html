@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <title> Pablo Moreno Calculator</title>
     <style>
+        /*Maybe not best practice to use css in html file*/
         body {
             font-family: 'Georgia', serif;
             background-color: #F5F5DC;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
+            margin-top: 12%;
         }
         
         .calculator {
@@ -27,26 +26,26 @@
             margin-bottom: 15px;
         }
         
-        input[type="text"] {
+        .number-input {
             background-color: #FAEBD7; 
             border: 1px solid #8B4513; 
             border-radius: 4px;
-            padding: 8px;
-            margin: 5px 0;
+            padding: 10px;
+            margin: 5px 1px;
             width: 80%;
             text-align: center;
         }
         
-        .button-group {
-            margin: 15px 0;
+        .buttons {
+            margin: 15px 1px;
         }
         
-        input[type="button"] {
+        .calc-button {
             background-color: #A0522D;
             color: white;
             padding: 10px 15px;
             margin: 5px;
-            font-size: 16px;
+            font-size: 20px;
         }
         
         .result {
@@ -60,25 +59,6 @@
     </style>
 </head>
 <body>
-    <form name="form1" class="calculator">
-        <h1>Calculator App</h1>
-        <div class="inputs">
-            <input type="text" name="txtNum1" placeholder="Operand 1"><br>
-            <input type="text" name="txtNum2" placeholder="Operand 2">
-        </div>
-        
-        <div class="button-group">
-            <input type="button" value="+" onclick="add()"> 
-            <input type="button" value="-" onclick="subtract()">
-            <input type="button" value="*" onclick="multiply()">
-            <input type="button" value="÷" onclick="divide()">
-        </div>
-        
-        <div class="result">
-            <input type="text" name="txtSum" placeholder="Result">
-        </div>
-    </form>
-
     <script>
         function add(){
             var num1, num2;
@@ -105,5 +85,23 @@
             document.form1.txtSum.value = num1/num2;
         }
     </script>
+    <form name="form1" class="calculator">
+        <h1>Calculator App</h1>
+        <div class="inputs">
+            <input type="text" class="number-input" name="txtNum1" placeholder="Operand 1"><br>
+            <input type="text" class="number-input" name="txtNum2" placeholder="Operand 2">
+        </div>
+        
+        <div class="buttons">
+            <input type="button" class="calc-button" value="+" onclick="add()"> 
+            <input type="button" class="calc-button" value="-" onclick="subtract()">
+            <input type="button" class="calc-button" value="*" onclick="multiply()">
+            <input type="button" class="calc-button" value="÷" onclick="divide()">
+        </div>
+        
+        <div class="result">
+            <input type="text" class="number-input" name="txtSum" placeholder="Result">
+        </div>
+    </form>
 </body>
 </html>
